@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="template">
+    <name>ThisTemplate</name>
+    <creationDate>2014-02-12</creationDate>
+    <author>Hans Kuijpers</author>
+    <authorEmail>info@hkweb.nl</authorEmail>
+    <authorUrl>http://www.hkweb.nl</authorUrl>
+    <copyright>HKweb 2014</copyright>
+    <license>GNU/GPL</license>
+    <version>1.0.2</version>
+    <description>TPL_THISTEMPLATE_XML_DESCRIPTION</description>
+
+    <files>
+        <filename>index.php</filename>
+        <filename>helper.php</filename>
+        <filename>templateDetails.xml</filename>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>fonts</folder>
+        <folder>html</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>layouts</folder>
+        <folder>less</folder>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.tpl_thistemplate.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_thistemplate.sys.ini</language>
+    </languages>
+
+    <positions>
+        <position>header</position>
+        <position>nav</position>
+        <position>top</position>
+        <position>breadcrumbs</position>
+        <position>main-top</position>
+        <position>sidebar-a</position>
+        <position>sidebar-b</position>
+        <position>content-top</position>
+        <position>content-bottom</position>
+        <position>main-bottom</position>
+        <position>bottom</position>
+        <position>footer</position>
+    </positions>
+
+</extension>
