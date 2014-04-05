@@ -13,6 +13,7 @@
     <files>
         <filename>index.php</filename>
         <filename>helper.php</filename>
+        <filename>helper.class.php</filename>
         <filename>templateDetails.xml</filename>
         <folder>css</folder>
         <folder>images</folder>
@@ -43,5 +44,22 @@
         <position>bottom</position>
         <position>footer</position>
     </positions>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="cssmode" type="list" default="css"
+                    label="TPL_THISTEMPLATE_FIELD_CSSMODE_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_CSSMODE_DESC"
+                >
+                    <option value="lessjs">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSJS</option>
+                    <option value="fofless">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_FOFLESS</option>
+                    <option value="lessphp">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSPHP</option>
+                    <option value="lessc">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSC</option>
+                    <option value="css">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_CSS</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
 
 </extension>

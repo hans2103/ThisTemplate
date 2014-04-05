@@ -2,6 +2,9 @@
 // no direct access
 defined('_JEXEC') or die;
 
+// Include the helper-class
+include_once dirname(__FILE__).'/helper.class.php';
+
 // Browser detection
 jimport('joomla.environment.browser');
 
@@ -49,37 +52,17 @@ $sitename               = $app->getCfg('sitename');
 // To enable use of site configuration
 $pageParams             = $app->getParams();
 
-class ThisTemplateHelper 
-{
-    static public function isHome() 
-    {
-        // Fetch the active menu-item
-        $menu = JFactory::getApplication()->getMenu();
-        $active = $menu->getActive();
-
-        // Return whether this active menu-item is home or not
-        return (boolean)$active->home;
-    }
-}
-
 if(ThisTemplateHelper::isHome()) { 
     $siteHome = "home";
 } else {
     $siteHome = "sub";
 }
 
-// add remove css
-unset($doc->_styleSheets[$this->baseurl.'/components/com_rsform/assets/calendar/calendar.css']);
-unset($doc->_styleSheets[$this->baseurl.'/components/com_rsform/assets/css/front.css']);
-$doc->addStyleSheet('//fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,700');
-if (true) {
-    $doc->addStyleSheet($template.'/css/template.css');
-} else {
-    $doc->addStyleSheetLess($template.'/less/template.less');
-    $doc->addScript($template.'/js/cloudflare/less.compiler.js');
-    $doc->addScript('//cdnjs.cloudflare.com/ajax/libs/less.js/1.6.3/less.min.js');
-}
-$doc->addScript('//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js');
+// Include CSS
+ThisTemplateHelper::loadCss($this);
+
+
+
 $doc->addScript($template.'/js/application.js');
 if($browser->getBrowser() == 'msie' && $browser->getMajor() < 9 ) {
     $stylelink = '<!--[if lt IE 9]>' ."\n";
