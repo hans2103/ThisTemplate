@@ -1,7 +1,7 @@
 
 jQuery(function($) {
     var img = new Image(), imgW, imgH, newW, newH, minH;
-    img.src = $('.hero').css('background-image').replace('url(', '').replace(/'/, '').replace(')', '').replace('"','').replace('"','');
+    //img.src = $('.hero').css('background-image').replace('url(', '').replace(/'/, '').replace(')', '').replace('"','').replace('"','');
     function doResize() {
         imgW = img.width;
         imgH = img.height;

@@ -1,0 +1,215 @@
+html {
+    font-size: @font-size-base;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    background-color:#f9f9f9;
+}
+
+a {
+    .transition(all 200ms ease-in);
+}
+
+h1 {
+    margin-top:3*@default-unit;
+    margin-bottom:3*@default-unit;
+}
+
+.no-margin-top {
+    &,
+    h2,
+    h3 {
+        margin-top:0;
+    }
+}
+
+.col-centered {
+    float:none;
+    margin:0 auto;
+}
+
+@media (min-width: 992px) {
+    .col-md-one-third {
+        float:left;
+        width:33.33%;
+        position: relative;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.navbar {
+    .transition(all .3s);
+}
+
+.navbar-nav {
+    > li {
+        > a {
+            font-weight:700;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+}
+
+.dropdown {
+    &:hover {
+        .dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+.inner {
+    padding-top:1.5*@default-unit;
+    padding-bottom:1.5*@default-unit;
+}
+
+.black-wrapper {
+    background-color:@gray-darker;
+    color:@gray-lighter;
+}
+
+.light-wrapper {
+    background-color:#f9f9f9;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.thumbnail {
+    .caption {
+        h4 {
+            margin-top:0;
+            font-family:@font-family-monospace;
+        }
+    }
+}
+
+.section-title {
+    margin-bottom:1.25*@default-unit;
+    h3 {
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        font-size:@font-size-large;
+        font-family:@font-family-monospace;
+        &:after {
+            right: -100px;
+            top: 9px;
+        }
+        &:before {
+            left: -100px;
+            top: 9px;
+        }
+    }
+
+    &.text-center h3:before,
+    h3:after {
+        display: inline-block;
+        content: "";
+        border-top: 1px solid @gray-light;
+        border-bottom: 1px solid @gray-light;
+        height: 4px;
+        position: absolute;
+        width: 4*@default-unit;
+    }
+}
+
+.lead {
+    font-size: @font-size-h4;
+    font-weight: @font-weight-light;
+    font-family: @font-family-sans-serif;
+}
+
+.page-header,
+.widget-title {
+  margin: 0 0 @line-height-computed;
+}
+.contact-form-field {
+  margin-bottom: 0.5*@default-unit;
+}
+.send-btn {
+  margin-top: 0.5*@default-unit;
+}
+.alert-message {
+  .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+
+footer {
+    background-color: @gray-darker;
+    color:white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    .container {
+        padding-top:1.75*@default-unit;
+        padding-bottom:1.75*@default-unit;
+    }
+}
+
+.social {
+    a {
+        margin: 0 0 0 5px;
+        display: inline-block;
+        i {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            background-color:transparent;
+            border:1px solid @gray-light;
+            color:@gray-light;
+            .transition(all 200ms ease-in);
+            width:1.5*@default-unit;
+            height:1.5*@default-unit;
+        }
+        .fa-twitter {
+            border-color: @color-twitter;
+            color: @color-twitter;
+        }
+        .fa-facebook {
+            border-color: @color-facebook;
+            color: @color-facebook;
+        }
+        .fa-pinterest {
+            border-color: @color-pinterest;
+            color: @color-pinterest;
+        }
+        .fa-flickr {
+            border-color: @color-flickr;
+            color: @color-flickr;
+        }
+        .fa-linkedin {
+            border-color: @color-linkedin;
+            color: @color-linkedin;
+        }
+        &:hover {
+            text-decoration: none;
+            .fa-twitter {
+                background-color:@color-twitter;
+                color: white;
+            }
+            .fa-facebook {
+                background-color:@color-facebook;
+                color: white;
+            }
+            .fa-pinterest {
+                background-color:@color-pinterest;
+                color: white;
+            }
+            .fa-flickr {
+                background-color:@color-flickr;
+                color: white;
+            }
+            .fa-linkedin {
+                background-color:@color-linkedin;
+                color: white;
+            }
+        }
+    }
+}
+
+
+

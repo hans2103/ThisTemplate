@@ -47,7 +47,10 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="cssmode" type="list" default="css"
+
+                <field name="cssmode" 
+                    type="list" 
+                    default="css"
                     label="TPL_THISTEMPLATE_FIELD_CSSMODE_LABEL"
                     description="TPL_THISTEMPLATE_FIELD_CSSMODE_DESC"
                 >
@@ -57,7 +60,77 @@
                     <option value="lessc">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSC</option>
                     <option value="css">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_CSS</option>
                 </field>
+
+                <field name="pagelayout" 
+                    type="list" 
+                    default="1column"
+                    label="TPL_THISTEMPLATE_FIELD_PAGELAYOUT_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_PAGELAYOUT_DESC"
+                >
+                    <option value="1column">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_1COLUMN</option>
+                    <option value="2column-left">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-LEFT</option>
+                    <option value="2column-right">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-RIGHT</option>
+                    <option value="3column">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_3COLUMN</option>
+                </field>
+
             </fieldset>
+
+<!--            <fieldset name="Logo" addfieldpath="/templates/portfolio/fields">
+				<field
+					name="logoFile"
+					class=""
+					type="media"
+					default=""
+					label="TPL_JOOSTRAP_LOGO_LABEL"
+					description="TPL_JOOSTRAP_LOGO_DESC"
+				/>
+				<field
+					name="logoMarginTop"
+					type="text"
+					class="input-small"
+					default="0"
+					label="TPL_JOOSTRAP_LOGOMARGIN_TOP_LABEL"
+					description="TPL_JOOSTRAP_LOGOMARGIN_TOP_DESC"
+				/>
+				<field
+					name="logoMarginBottom"
+					type="text"
+					class="input-small"
+					default="0"
+					label="TPL_JOOSTRAP_LOGOMARGIN_BOTTOM_LABEL"
+					description="TPL_JOOSTRAP_LOGOMARGIN_BOTTOM_DESC"
+				/>
+				<field
+					name="sitetitle"
+					class=""
+					type="text"
+					default="Your Logo Here"
+					label="TPL_JOOSTRAP_TEMPLATETITLE_LABEL"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string"
+				/>
+				<field
+					name="sitedescription"
+					class=""
+					type="text"
+					default=""
+					label="TPL_JOOSTRAP_TEMPLATE_DESC_LABEL"
+					description="JGLOBAL_SUBHEADING_DESC"
+					filter="string"
+				/>
+				<field
+					name="css_style"
+					type="tplasset"
+					asset="admin/style.css"
+				/>
+				<field
+					name="js_color"
+					type="tplasset"
+					asset="admin/color.js"
+				/>
+			</fieldset>-->
+            
+            
         </fields>
     </config>
 
