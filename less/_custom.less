@@ -25,9 +25,34 @@ h1 {
     }
 }
 
+// Browser width specific .col-centered
+.col-xs-centered {
+  @media (max-width: @screen-xs-max) {
+    float: none;
+    margin: 0 auto;
+  }
+}
+.col-sm-centered {
+  @media (max-width: @screen-sm-max) {
+    float: none;
+    margin: 0 auto;
+  }
+}
+.col-md-centered {
+  @media (max-width: @screen-md-max) {
+    float: none;
+    margin: 0 auto;
+  }
+}
+.col-lg-centered {
+  @media (min-width: @screen-lg-min) {
+    float: none;
+    margin: 0 auto;
+  }
+}
 .col-centered {
-    float:none;
-    margin:0 auto;
+    float: none;
+    margin: 0 auto;
 }
 
 @media (min-width: 992px) {
