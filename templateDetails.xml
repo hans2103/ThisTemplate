@@ -7,7 +7,7 @@
     <authorUrl>http://www.hkweb.nl</authorUrl>
     <copyright>HKweb 2014</copyright>
     <license>GNU/GPL</license>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>TPL_THISTEMPLATE_XML_DESCRIPTION</description>
 
     <files>
@@ -72,65 +72,38 @@
                     <option value="2column-right">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-RIGHT</option>
                     <option value="3column">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_3COLUMN</option>
                 </field>
-
             </fieldset>
 
-<!--            <fieldset name="Logo" addfieldpath="/templates/portfolio/fields">
-				<field
-					name="logoFile"
-					class=""
-					type="media"
-					default=""
-					label="TPL_JOOSTRAP_LOGO_LABEL"
-					description="TPL_JOOSTRAP_LOGO_DESC"
-				/>
-				<field
-					name="logoMarginTop"
-					type="text"
-					class="input-small"
-					default="0"
-					label="TPL_JOOSTRAP_LOGOMARGIN_TOP_LABEL"
-					description="TPL_JOOSTRAP_LOGOMARGIN_TOP_DESC"
-				/>
-				<field
-					name="logoMarginBottom"
-					type="text"
-					class="input-small"
-					default="0"
-					label="TPL_JOOSTRAP_LOGOMARGIN_BOTTOM_LABEL"
-					description="TPL_JOOSTRAP_LOGOMARGIN_BOTTOM_DESC"
-				/>
-				<field
-					name="sitetitle"
-					class=""
-					type="text"
-					default="Your Logo Here"
-					label="TPL_JOOSTRAP_TEMPLATETITLE_LABEL"
-					description="JFIELD_ALT_PAGE_TITLE_LABEL"
-					filter="string"
-				/>
-				<field
-					name="sitedescription"
-					class=""
-					type="text"
-					default=""
-					label="TPL_JOOSTRAP_TEMPLATE_DESC_LABEL"
-					description="JGLOBAL_SUBHEADING_DESC"
-					filter="string"
-				/>
-				<field
-					name="css_style"
-					type="tplasset"
-					asset="admin/style.css"
-				/>
-				<field
-					name="js_color"
-					type="tplasset"
-					asset="admin/color.js"
-				/>
-			</fieldset>-->
-            
-            
+            <fieldset name="advanced">
+                <field
+                    name="analytics"
+                    type="list"
+                    default="0"
+                    label="TPL_THISTEMPLATE_FIELD_ANALYTICS_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_ANALYTICS_DESC">
+                        <option value="0">
+                            TPL_THISTEMPLATE_FIELD_ANALYTICS_OPTION_NO
+                        </option>
+                        <option value="1">
+                            TPL_THISTEMPLATE_FIELD_ANALYTICS_OPTION_GA
+                        </option>
+                        <option value="2">
+                            TPL_THISTEMPLATE_FIELD_ANALYTICS_OPTION_UGA
+                        </option>
+                        <option value="3">
+                            TPL_THISTEMPLATE_FIELD_ANALYTICS_OPTION_GTM
+                        </option>
+                </field>
+                <field
+                    name="analyticsid"
+                    type="text"
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_ANALYTICSID_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_ANALYTICSID_DESC"
+                    filter="string"
+                />
+            </fieldset>
+
         </fields>
     </config>
 
