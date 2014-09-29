@@ -55,6 +55,28 @@ h1 {
     margin: 0 auto;
 }
 
+// Browser width specific .text-center
+.text-xs-center {
+  @media (max-width: @screen-xs-max) {
+    text-align: center;
+  }
+}
+.text-sm-center {
+  @media (max-width: @screen-sm-max) {
+    text-align: center;
+  }
+}
+.text-md-center {
+  @media (max-width: @screen-md-max) {
+    text-align: center;
+  }
+}
+.text-lg-center {
+  @media (min-width: @screen-lg-min) {
+    text-align: center;
+  }
+}
+
 @media (min-width: 992px) {
     .col-md-one-third {
         float:left;
