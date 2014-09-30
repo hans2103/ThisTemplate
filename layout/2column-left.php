@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 ?>
-<div class="<?php echo 'col-sm-'.($grid - $gridSidebar).' col-sm-push-'.$gridSidebar; ?><?php echo ThisTemplateHelper::isHome() ? ' border-right' : ''; ?>">
+<div class="<?php echo 'col-sm-'.($grid - $gridSidebar).' col-sm-push-'.$gridSidebar; ?><?php echo $helper->isHome() ? ' border-right' : ''; ?>">
     <?php if($this->countModules('content-top')) : ?>
         <jdoc:include type="modules" name="content-top" style="standard" />
     <?php endif; ?>

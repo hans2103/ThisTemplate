@@ -7,7 +7,7 @@
     <authorUrl>http://www.hkweb.nl</authorUrl>
     <copyright>HKweb 2014</copyright>
     <license>GNU/GPL</license>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <description>TPL_THISTEMPLATE_XML_DESCRIPTION</description>
 
     <files>
@@ -41,12 +41,63 @@
         <position>content-bottom</position>
         <position>main-bottom</position>
         <position>bottom</position>
+        <position>contact</position>
         <position>footer</position>
+        <position>copyright</position>
     </positions>
 
     <config>
         <fields name="params">
             <fieldset name="basic">
+
+                <field name="sitebrand" 
+                    type="list" 
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_SITEBRAND_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SITEBRAND_DESC"
+                >
+                    <option value="0">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_NO</option>
+                    <option value="1">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_IMAGE</option>
+                    <option value="2">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_IMAGESVG</option>
+                    <option value="3">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_TITLE</option>
+                    <option value="4">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_TITLEANDTAGLINE</option>
+                    <option value="5">TPL_THISTEMPLATE_FIELD_SITEBRAND_OPTION_TAGLINE</option>
+                </field>
+
+                <field
+                    name="sitetitle"
+                    type="text"
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_SITETITLE_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SITETITLE_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="sitetagline"
+                    type="textarea"
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_SITETAGLINE_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SITETAGLINE_DESC"
+                    filter="string"
+                />
+
+                <field
+                    name="sitelogo"
+                    type="media"
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_SITELOGO_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SITELOGO_DESC"
+                />
+
+                <field
+                    name="sitelogosvg"
+                    type="text"
+                    default=""
+                    label="TPL_THISTEMPLATE_FIELD_SITELOGOSVG_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SITELOGOSVG_DESC"
+                    filter="string"
+                />
 
                 <field name="cssmode" 
                     type="list" 
@@ -54,11 +105,16 @@
                     label="TPL_THISTEMPLATE_FIELD_CSSMODE_LABEL"
                     description="TPL_THISTEMPLATE_FIELD_CSSMODE_DESC"
                 >
-                    <option value="lessjs">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSJS</option>
-                    <option value="fofless">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_FOFLESS</option>
-                    <option value="lessphp">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSPHP</option>
-                    <option value="lessc">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSC</option>
-                    <option value="css">TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_CSS</option>
+                    <option value="lessjs">
+                        TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSJS</option>
+                    <option value="fofless">
+                        TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_FOFLESS</option>
+                    <option value="lessphp">
+                        TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSPHP</option>
+                    <option value="lessc">
+                        TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_LESSC</option>
+                    <option value="css">
+                        TPL_THISTEMPLATE_FIELD_CSSMODE_OPTION_CSS</option>
                 </field>
 
                 <field name="pagelayout" 
@@ -67,14 +123,25 @@
                     label="TPL_THISTEMPLATE_FIELD_PAGELAYOUT_LABEL"
                     description="TPL_THISTEMPLATE_FIELD_PAGELAYOUT_DESC"
                 >
-                    <option value="1column">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_1COLUMN</option>
-                    <option value="2column-left">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-LEFT</option>
-                    <option value="2column-right">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-RIGHT</option>
-                    <option value="3column">TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_3COLUMN</option>
+                    <option value="1column">        TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_1COLUMN</option>
+                    <option value="2column-left">   TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-LEFT</option>
+                    <option value="2column-right">  TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_2COLUMN-RIGHT</option>
+                    <option value="3column">        TPL_THISTEMPLATE_FIELD_PAGELAYOUT_OPTION_3COLUMN</option>
                 </field>
             </fieldset>
 
             <fieldset name="advanced">
+                <field name="svginjection"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="TPL_THISTEMPLATE_FIELD_SVGINJECTION_LABEL"
+                    description="TPL_THISTEMPLATE_FIELD_SVGINJECTION_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
                 <field
                     name="analytics"
                     type="list"

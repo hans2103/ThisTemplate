@@ -17,8 +17,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 <body class="<?php echo $siteHome ; ?>-page <?php echo $option . " view-" . $view . " itemid-" . $itemid . "";?>" itemscope itemtype="http://schema.org/WebPage">
 
 <?php 
-    if ($isAnalyticsGTM || $analyticsId) { 
-        echo $analyticsScript;
+    if (!empty($analyticsData) && $analyticsData['position'] == 'after_body_start') {
+        echo $analyticsData['script'];
     }
 ?>
 
@@ -125,28 +125,52 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
     <?php endif; ?>
 
     <div class="clear"></div>
+<main id="content-wrapper">
 
-    <?php if ($this->countModules('footer2')): ?>
-    <footer class="footer black-wrapper">
-        <div class="container inner">
-            <jdoc:include type="modules" name="footer2" style="none" />
+</main>
+
+
+    <footer id="footer" class="footer-wrapper">
+        <?php if ($this->countModules('contact')): ?>
+        <div class="container footer-contact">
+            <jdoc:include type="modules" name="contact" style="none" />
         </div>
-        <?php if ($copytext) : ?>
-        <div class="container">
-            <?php echo $copytext ?>
+        <?php endif; ?>
+
+        <?php if ($this->countModules('contact')): ?>
+        <div class="container footer-nav">
+            <jdoc:include type="modules" name="contact" style="none" />
+        </div>
+        <?php endif; ?>
+
+        <?php if ($this->countModules('copyright')): ?>
+        <div class="container footer-copyright">
+            <div class="row">
+                <div class="col-xs-4 col-xs-centered text-xs-center">
+                    bla
+                </div>
+                <div class="col-xs-8 col-xs-centered text-xs-center">
+                    <jdoc:include type="modules" name="copyright" style="none" />
+                </div>
         </div>
         <?php endif; ?>
     </footer>
-    <?php endif; ?>
 
     <?php if ($totop) : ?>
     <a href="#" class="go-top">Back to Top <i class="fa fa-arrow-circle-up"></i></a>
     <?php endif; ?>
 </div>
 
+
 <?php if ($this->countModules('debug')): ?>
     <jdoc:include type="modules" name="debug" style="none" />
 <?php endif; ?>
+
+<?php 
+    if (!empty($analyticsData) && $analyticsData['position'] == 'before_body_end') {
+        echo $analyticsData['script'];
+    }
+?>
 
 </body>
 </html>
