@@ -27,7 +27,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
         <div class="navbar-header">
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".mh-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-ba r"></span>
+            <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
