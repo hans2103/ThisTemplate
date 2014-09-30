@@ -164,7 +164,8 @@ class ThisTemplateHelper
             case 3:
                 // Google Analytics - load in head
                 if($analyticsId) {
-                    $analyticsScript = "<!-- Google Tag Manager -->
+                    $analyticsScript = "
+        <!-- Google Tag Manager -->
         <noscript><iframe src=\"//www.googletagmanager.com/ns.html?id=" . $analyticsId . "\"
         height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
