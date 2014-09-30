@@ -28,22 +28,25 @@ $gridSidebar            = 3;
 $gridSidebarPos         = 'left';
 $gridSidebarOffset      = 1;
 
+// Instantiate the helper class
+$helper = new ThisTemplateHelper();
+
 // Include adjust meta tags in HEAD
-ThisTemplateHelper::adjustHead($this);
+$helper->adjustHead($this);
 
 // Include CSS
-ThisTemplateHelper::loadCss($this);
+$helper->loadCss($this);
 
 // Include Analytics
-ThisTemplateHelper::getAnalytics($this);
+$analyticsData = $helper->getAnalytics($this);
 
 // Logo
-$logo = ThisTemplateHelper::getLogo($this);
+$logo = $helper->getLogo($this);
 
 // Load SVG Injection
 if ($this->params->get('svginjection'))
 {
-    ThisTemplateHelper::getSVGInjector($this);
+    $helper->getSVGInjector($this);
 }
 
 
@@ -52,7 +55,7 @@ if ($this->params->get('svginjection'))
 
 
 // Determine home
-if(ThisTemplateHelper::isHome()) { 
+if($helper->isHome()) { 
     $siteHome = "home";
 } else {
     $siteHome = "sub";

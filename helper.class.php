@@ -3,11 +3,15 @@ defined('_JEXEC') or die;
 
 class ThisTemplateHelper 
 {
+    public function getDocument()
+    {
+        return JFactory::getDocument();
+    }
 
-    static public function adjustHead($template)
+    public function adjustHead($template)
     {
         // Determine the variables
-        $doc                = JFactory::getDocument();
+        $doc                = $this->getDocument();
         $head               = $doc->getHeadData();
         $site_title         = $template->params->get('sitetitle');
 
@@ -38,7 +42,7 @@ class ThisTemplateHelper
         $doc->setGenerator($site_title);
     }
 
-    static public function isHome()
+    public function isHome()
     {
         // Fetch the active menu-item
         $menu = JFactory::getApplication()->getMenu();
@@ -48,7 +52,7 @@ class ThisTemplateHelper
         return (boolean)$active->home;
     }
 
-    static public function loadCss($template)
+    public function loadCss($template)
     {
         // Determine the variables
         $doc                = JFactory::getDocument();
@@ -72,7 +76,7 @@ class ThisTemplateHelper
             case 'lessjs':
                 // Load LESS.js
                 $doc->addStyleSheet($templateUrl.'/less/template.less','text/less');
-                $doc->addScript($templateUrl.'/js/cloudflare/less.compiler.params.js'); // @todo: jisse: Why CloudFlare???
+                $doc->addScript($templateUrl.'/js/less.compiler.params.js');
                 $doc->addScript('//cdnjs.cloudflare.com/ajax/libs/less.js/' . $versionLess . '/less.min.js');
                 unset($doc->_scripts[JPATH_SITE.'/media/jui/js/bootstrap.min.js']);
                 $doc->addScript('//netdna.bootstrapcdn.com/bootstrap/' . $versionBootstrap . '/js/bootstrap.min.js');
@@ -112,7 +116,7 @@ class ThisTemplateHelper
         }
     }
 
-    static public function getAnalytics($template)
+    public function getAnalytics($template)
     {
         // Determine the variables
         $doc                = JFactory::getDocument();
@@ -159,7 +163,6 @@ class ThisTemplateHelper
                 break;
             case 3:
                 // Google Analytics - load in head
-                $isAnalyticsGTM = true;
                 if($analyticsId) {
                     $analyticsScript = "<!-- Google Tag Manager -->
         <noscript><iframe src=\"//www.googletagmanager.com/ns.html?id=" . $analyticsId . "\"
@@ -172,13 +175,13 @@ class ThisTemplateHelper
         <!-- End Google Tag Manager -->
         
         ";
-                    return $analyticsScript;
+                    return array('script' => $analyticsScript, 'position' => 'after_body_start');
                 }
                 break;
         }
     }
 
-    static public function getLogo($template)
+    public function getLogo($template)
     {
         // Determine the variables
         $sitebrand          = $template->params->get('sitebrand',0);
@@ -206,7 +209,7 @@ class ThisTemplateHelper
                     {
                         $logo = '<a href="' . $site_url . '/" class="navbar-brand"><img src="' . JURI::root() . 'images/' . $site_logosvg . '" alt="' . htmlspecialchars($site_title) . '" class="inject-me" /></a>';
                         // using SVGInjector to inject the image
-                        self::getSVGInjector($template);
+                        $this->getSVGInjector($template);
                         return $logo;
                     }
                 break;
@@ -237,10 +240,10 @@ class ThisTemplateHelper
         }
     }
 
-    static public function getSVGInjector($template)
+    public function getSVGInjector($template)
     {
         // Determine the variables
-        $doc                = JFactory::getDocument();
+        $doc                = $this->getDocument();
         $templateUrl        = 'templates/'.$template->template;
 
         $doc->addScript($templateUrl.'js/svg-injector/svg-injector.min.js');

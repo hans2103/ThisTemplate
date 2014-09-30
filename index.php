@@ -17,10 +17,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 <body class="<?php echo $siteHome ; ?>-page <?php echo $option . " view-" . $view . " itemid-" . $itemid . "";?>" itemscope itemtype="http://schema.org/WebPage">
 
 <?php 
-    //var_dump(ThisTemplateHelper::getAnalytics($analyticsScript));
-    /*if ($isAnalyticsGTM || $analyticsId) { 
-        echo $analyticsScript;
-    }*/
+    if (!empty($analyticsData) && $analyticsData['position'] == 'after_body_start') {
+        echo $analyticsData['script'];
+    }
 ?>
 
     <header class="navbar navbar-default navbar-fixed-top mh-docs-nav" id="top" role="banner">
@@ -166,6 +165,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 <?php if ($this->countModules('debug')): ?>
     <jdoc:include type="modules" name="debug" style="none" />
 <?php endif; ?>
+
+<?php 
+    if (!empty($analyticsData) && $analyticsData['position'] == 'before_body_end') {
+        echo $analyticsData['script'];
+    }
+?>
 
 </body>
 </html>
