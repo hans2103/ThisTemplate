@@ -25,6 +25,7 @@ Implementations
 ============
 ThisTemplate is used for the following websites:
 
+- http://boetels.nl
 - https://byte.nl
 - http://markhenkelman.nl
 - http://11x11plus11.nl
