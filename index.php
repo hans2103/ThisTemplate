@@ -5,11 +5,14 @@ defined('_JEXEC') or die;
 include_once JPATH_THEMES.'/'.$this->template.'/helper.php';
 ?>
 <!DOCTYPE html>
+<?php if(preg_match('/(?i)msie/',$_SERVER['HTTP_USER_AGENT'])) : ?>
 <!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie10 lt-ie9" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>"> <![endif]-->
 <!--[if IE 9]> <html class="no-js lt-ie10" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>"> <![endif]-->
-<!--[if !IE]><!--> <html class="no-js" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>"> <!--<![endif]-->
+<?php else : ?>
+<html class="no-js" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<?php endif ?>
 <head>
 <jdoc:include type="head" />
 </head>
