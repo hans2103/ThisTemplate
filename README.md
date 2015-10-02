@@ -29,5 +29,7 @@ ThisTemplate is used for the following websites:
 - https://byte.nl
 - http://markhenkelman.nl
 - http://11x11plus11.nl
+- https://www.amref.nl
+- http://sealkingeurope.com
 
 [![Analytics](https://ga-beacon.appspot.com/UA-2000642-17/ThisTemplate/readme)](https://github.com/igrigorik/ga-beacon)
