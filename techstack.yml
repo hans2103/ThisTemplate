@@ -1,7 +1,8 @@
 repo_name: hans2103/ThisTemplate
 report_id: c3e05e58844d40690aed1e55fdf12e19
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T16:02:36+00:00'
+timestamp: '2024-01-04T14:57:25+00:00'
 requested_by: hans2103
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/hans2103/ThisTemplate
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -25,6 +27,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/hans2103/ThisTemplate
   detection_source: Repo Metadata
 - name: PHP
   description: A popular general-purpose scripting language that is especially suited
@@ -35,6 +38,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/991/hwUcGZ41_400x400.jpg
+  detection_source_url: https://github.com/hans2103/ThisTemplate
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -44,6 +48,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/hans2103/ThisTemplate
   detection_source: Repo Metadata
 - name: Travis CI
   description: A hosted continuous integration service for open source and private
@@ -54,6 +59,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/460/Lu6cGu0z_400x400.png
+  detection_source_url: https://github.com/hans2103/ThisTemplate/blob/master/lib/vendor/oyejorge/less.php/.travis.yml
   detection_source: lib/vendor/oyejorge/less.php/.travis.yml
   last_updated_by: Hans Kuijpers
   last_updated_on: 2014-09-25 08:48:47.000000000 Z
